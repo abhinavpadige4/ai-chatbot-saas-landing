@@ -14,9 +14,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
@@ -25,44 +24,27 @@
     @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-glass transition-all duration-300 hover:shadow-glass-hover;
   }
 
-  .glass-button {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-white/20 hover:border-white/30;
+  .glass-card-border {
+    @apply border-[1px] border-gradient-primary;
   }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-500 hover:to-primary-400 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg;
   }
 
-  .gradient-border {
-    @apply border-2 border-gradient-to-r from-primary-500 to-secondary-500;
+  .btn-outline {
+    @apply border border-white/20 bg-transparent hover:bg-white/10 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02];
   }
 
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .feature-icon {
+    @apply w-12 h-12 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-xl transition-transform duration-300 hover:scale-110 hover:rotate-6;
   }
 
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
+  .animate-on-scroll {
+    @apply opacity-0 transform translate-y-10 transition-opacity transition-transform duration-700 ease-out;
   }
 
-  .animate-pulse-slow {
-    animation: pulse-slow 4s ease-in-out infinite;
-  }
-
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.7;
-    }
+  .animate-on-scroll.visible {
+    @apply opacity-100 transform translate-y-0;
   }
 }
