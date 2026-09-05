@@ -1,0 +1,51 @@
+export const pricingPlans = [
+  {
+    id: 1,
+    name: "Starter",
+    price: 29,
+    billingPeriod: "mo",
+    chats: "Up to 500 chats/mo",
+    features: [
+      "Basic analytics",
+      "Email support",
+      "Standard branding",
+      "Up to 3 team members",
+    ],
+    recommended: false,
+    color: "purple",
+  },
+  {
+    id: 2,
+    name: "Pro",
+    price: 79,
+    billingPeriod: "mo",
+    chats: "Up to 2,000 chats/mo",
+    features: [
+      "Advanced analytics",
+      "Priority support",
+      "Custom branding",
+      "API access",
+      "Up to 10 team members",
+    ],
+    recommended: true,
+    color: "blue",
+  },
+  {
+    id: 3,
+    name: "Enterprise",
+    price: 0, // Custom pricing
+    billingPeriod: "",
+    chats: "Unlimited chats",
+    features: [
+      "Dedicated account manager",
+      "SLA guaranteed",
+      "On-premise option",
+      "Custom integrations",
+      "SSO & SCIM",
+      "Unlimited team members",
+    ],
+    recommended: false,
+    color: "gradient",
+    isCustom: true,
+  },
+];
