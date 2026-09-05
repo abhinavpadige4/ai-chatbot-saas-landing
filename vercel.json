@@ -1,3 +1,4 @@
+```json
 {
   "version": 2,
   "builds": [
@@ -7,13 +8,7 @@
       "config": { "distDir": "dist" }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "env": {
-    "VITE_APP_NAME": "AI Chatbot SaaS"
-  }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
