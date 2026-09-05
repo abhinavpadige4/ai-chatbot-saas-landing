@@ -33,18 +33,22 @@ module.exports = {
           900: '#0c4a6e',
         }
       },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%)',
+        'glass': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+        'glass-border': 'linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)'
+      },
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        'glass-hover': '0 12px 40px 0 rgba(31, 38, 135, 0.45)'
-      },
-      backdropFilter: {
-        'none': 'none',
-        'blur': 'blur(20px)'
+        'glass-hover': '0 12px 40px 0 rgba(31, 38, 135, 0.5)'
       },
       borderRadius: {
-        'lg': '0.5rem',
-        'xl': '0.75rem',
-        '2xl': '1rem'
+        'lg': '0.75rem',
+        'xl': '1rem'
+      },
+      transitionDuration: {
+        'DEFAULT': '200ms',
+        'hover': '300ms'
       }
     },
   },
@@ -52,4 +56,4 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
   ],
-};
+}
