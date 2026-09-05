@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
-  <path d="M60 0L100 30L100 70L60 100L20 70L20 30Z" fill="url(#gradient)" />
+  <path d="M60 0L100 40L100 80L60 120L20 80L20 40Z" fill="url(#gradient)" />
   <defs>
     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
