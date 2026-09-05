@@ -8,11 +8,11 @@ export const pricingPlans = [
       "Up to 500 chats/mo",
       "Basic analytics",
       "Email support",
-      "Standard branding"
+      "Standard branding",
     ],
-    recommended: false,
+    isPopular: false,
     bgColor: "bg-purple-900/20",
-    borderColor: "border-purple-500/30"
+    borderColor: "border-purple-500/30",
   },
   {
     id: 2,
@@ -24,11 +24,11 @@ export const pricingPlans = [
       "Advanced analytics",
       "Priority support",
       "Custom branding",
-      "API access"
+      "API access",
     ],
-    recommended: true,
+    isPopular: true,
     bgColor: "bg-blue-900/20",
-    borderColor: "border-blue-500/30"
+    borderColor: "border-blue-500/30",
   },
   {
     id: 3,
@@ -40,10 +40,10 @@ export const pricingPlans = [
       "Dedicated account manager",
       "SLA guaranteed",
       "On-premise option",
-      "Custom integrations"
+      "Custom integrations",
     ],
-    recommended: false,
+    isPopular: false,
     bgColor: "bg-gradient-to-r from-purple-900/20 to-blue-900/20",
-    borderColor: "border-purple-500/30 border-blue-500/30"
-  }
+    borderColor: "border-purple-500/30 border-blue-500/30",
+  },
 ];
