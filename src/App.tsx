@@ -9,23 +9,21 @@ function App() {
       <main>
         {/* Other sections will be added here */}
         <div className="py-20 text-center">
-          <h1 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500">
+          <h1 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
             AI-Powered Customer Support
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Deploy a custom AI chatbot that works 24/7, speaks multiple languages, and learns from every interaction.
           </p>
-          <div className="mt-8">
-            <button 
-              className="px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-medium rounded-lg transition-transform transform hover:scale-105 shadow-lg shadow-purple-500/30"
-            >
-              Start Free Trial
-            </button>
-          </div>
+          <button 
+            className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-transform transform hover:scale-105 shadow-lg"
+          >
+            Start Free Trial
+          </button>
         </div>
       </main>
-      <footer className="border-t border-gray-800 mt-20">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+      <footer className="bg-gray-950/80 backdrop-blur-sm border-t border-gray-800/50 py-10">
+        <div className="max-w-7xl mx-auto px-6 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-400">
             <div>
               <h3 className="font-semibold mb-4 text-white">Product</h3>
@@ -33,49 +31,50 @@ function App() {
                 <li><a href="#" className="hover:text-white transition-colors">Features</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Demo</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold mb-4 text-white">Resources</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Docs</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">API Reference</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4 text-white">Company</h3>
               <ul className="space-y-2">
                 <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold mb-4 text-white">Resources</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="font-semibold mb-4 text-white">Social</h3>
+              <h3 className="font-semibold mb-4 text-white">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M8.007 2.027a4.49 4.49 0 00-1.417.08A4.532 4.532 0 002 6.344c0 .896.286 1.75.78 2.46a4.532 4.532 0 01-2.048-.555v.06c0 2.202 1.568 4.04 3.639 4.457v1.06h2.489v-4.83h2.742c.41 0 .81-.01 1.209-.03v-2.48c-.002-1.51.55-2.73 1.78-2.73 1.08 0 1.835.57 1.835 1.43v1.96h-1.26c-.592 0-.98-.37-.98-.92 0-.57.24-.94.64-.94h1.48V4.41c0-1.31.47-2.38 1.41-2.38s1.41 1.07 1.41 2.38v2.41h2.74c-.43 1.4-1.4 2.44-2.86 2.44z"/>
+                    <path fillRule="evenodd" d="M8 0a4 4 0 00-4 4v5H1a1 1 0 000 2h3v5a1 1 0 002 0v-5h3a1 1 0 000-2h-2V4a1 1 0 011-1h3a1 1 0 000-2H8z" clipRule="evenodd" />
                   </svg>
                 </a>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M19 11a9.01 9.01 0 01-2.829-.588A8.97 8.97 0 0020 10c0-1.103-.133-2.168-.367-3.19a8.99 8.99 0 002.588-2.588A8.97 8.97 0 0016.807 0H14.06a8.98 8.98 0 00-6.273 12.345c1.157-.08 2.234-.33 3.19-.667zM5.336 6.034l-.708-.708L3 7.414v2.293l1.647 1.646-.708.708L3 11.586V9l1.414-1.414z"/>
+                    <path d="M19 11a9.8 9.8 0 01-2.83.72A4.96 4.96 0 0013 7a4.96 4.96 0 00-1.41 3.48 4.96 4.96 0 01-2.23-.65v.06c0 2.42 1.72 4.44 4 4.9 1.16-.11 2.24-.33 3.22-.76a4.93 4.93 0 00-1.5 2.56v.06c0 2.42 1.72 4.44 4 4.9a9.9 9.9 0 01-6.2 1.78c-.41 0-.82-.03-1.22-.08a4.93 4.93 0 002.25 1.52A9.9 9.9 0 013 18.07a9.89 9.89 0 01-1.41-.62c-.41-.82-.63-1.77-.63-2.79 0-1.91.69-3.56 1.82-4.76a4.93 4.93 0 00-.42-1.19v-.06c.41-.13.82-.26 1.22-.39a4.93 4.93 0 00-1.51-.4v-.06c0-1.21.43-2.29 1.14-3.15a4.93 4.93 0 011.31-1.75 4.93 4.93 0 002.18-.58c1.07 0 2.07.43 2.83 1.16a4.93 4.93 0 01-2.44.66c-.67 0-1.29-.28-1.75-.76a4.96 4.96 0 012.46-.8c.54 0 1.06.21 1.46.56a4.93 4.93 0 00-2.49-.58c-.67 0-1.23.44-1.23 1.1 0 .41.13.81.34 1.1a4.93 4.93 0 01-1.11.39c-.27 0-.53-.09-.78-.22a4.93 4.93 0 001.56 3.11 4.93 4.93 0 01-2.22-.61c-.39 0-.75-.14-1.07-.33a4.96 4.96 0 001.56 3.11 4.96 4.96 0 01-2.22.61A14.73 14.73 0 007 19.54c4.33 0 6.7-2.64 7.65-5.98a9.86 9.86 0 001.56-3.11z" fillRule="evenodd" clipRule="evenodd" />
                   </svg>
                 </a>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10 .5a9.5 9.5 0 109.5 9.5A9.51 9.51 0 0010 .5zM9.504 13.224a1 1 0 01-.996-.836l-.004-.164v-3.28a1 1 0 011.412-.708l.664.108v1.78a1 1 0 01-1 1v1.29a2 2 0 10-2 0v-1.29a1 1 0 011-1v-.79l-.372-.06a1 1 0 01-.996-.836z"/>
+                    <path fillRule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    <path fillRule="evenodd" d="M7.41 15.41a2 2 0 01-2.83-2.83 2 2 0 012.83-2.83 2 2 0 012.83 2.83 2 2 0 01-2.83 2.83zM2 10a8 8 0 0116 0A8 8 0 012 10zm0-1a7 7 0 0014 0A7 7 0 002 9z" clipRule="evenodd" />
                   </svg>
                 </a>
               </div>
             </div>
           </div>
-          <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-500">
+          <div className="border-t border-gray-800/50 pt-6 text-center text-gray-500">
             <p>© 2026 AI Chatbot SaaS. All rights reserved.</p>
           </div>
         </div>
