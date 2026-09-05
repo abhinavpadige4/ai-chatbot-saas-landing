@@ -12,9 +12,9 @@ const FeaturesSection: React.FC = () => {
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
             <div className="relative z-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3" />
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">24/7 Availability</h3>
@@ -26,9 +26,9 @@ const FeaturesSection: React.FC = () => {
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
             <div className="relative z-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M9 15a3 3 0 115.657-3H9a3 3 0 01-5.657 3z" />
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M9 15a5 5 0 109.999 0V12h-1a3 3 0 01-2.998 3z" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Multi-Language</h3>
@@ -40,8 +40,8 @@ const FeaturesSection: React.FC = () => {
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
             <div className="relative z-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m2 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -54,9 +54,9 @@ const FeaturesSection: React.FC = () => {
           <div className="relative group">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none"></div>
             <div className="relative z-10 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 text-center hover:transform hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h18M3 9h18M3 15h18" />
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mb-6">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h18M3 3v18M9 12h6M9 9v3m0 0h3m-3-3h3M12 9v3" />
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-white mb-4">Analytics Dashboard</h3>
