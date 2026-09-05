@@ -1,154 +1,92 @@
-import React from 'react';
+```tsx
+import PricingCard from "./PricingCard";
 
-const PricingSection: React.FC = () => {
+const plans = [
+  {
+    name: "Starter",
+    price: "$29",
+    period: "/mo",
+    description: "Perfect for small teams getting started with AI support.",
+    features: [
+      "Up to 500 chats/month",
+      "Basic analytics dashboard",
+      "Email support",
+      "5 language support",
+      "Standard AI model",
+    ],
+    cta: "Start Free Trial",
+    highlighted: false,
+  },
+  {
+    name: "Pro",
+    price: "$79",
+    period: "/mo",
+    description: "For growing teams that need advanced capabilities.",
+    features: [
+      "Up to 2,000 chats/month",
+      "Advanced analytics & reports",
+      "Priority support (4hr SLA)",
+      "Custom branding",
+      "50+ language support",
+      "Advanced AI model",
+      "Webhook integrations",
+    ],
+    cta: "Start Free Trial",
+    highlighted: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    period: "",
+    description: "Tailored solutions for large organizations.",
+    features: [
+      "Unlimited chats",
+      "Dedicated account manager",
+      "Custom SLA",
+      "On-premise deployment option",
+      "SSO & SAML authentication",
+      "Custom AI model training",
+      "Advanced security & compliance",
+      "24/7 phone support",
+    ],
+    cta: "Contact Sales",
+    highlighted: false,
+  },
+];
+
+export default function PricingSection() {
   return (
-    <section className="py-20 bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-24 px-6">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Simple & Transparent Pricing
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest text-purple-400 border border-purple-500/20 bg-purple-500/10 mb-4">
+            Pricing
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            Simple, transparent{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400">pricing</span>
           </h2>
-          <p className="text-xl text-gray-400">
-            Choose the plan that fits your business needs. All plans include 24/7 support and continuous AI improvements.
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            Start free. Scale as you grow. No hidden fees.
           </p>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-3">
-          {/* Starter Plan */}
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <h3 className="text-2xl font-semibold text-white mb-4">Starter</h3>
-            <p className="text-5xl font-bold text-indigo-400 mb-6">
-              $29<span className="text-lg font-normal">/mo</span>
-            </p>
-            <ul className="space-y-4 text-gray-300 mb-8">
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                1 Chatbot
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                1,000 Messages/mo
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Basic Analytics
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Email Support
-              </li>
-            </ul>
-            <button
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 transform hover:scale-105"
-            >
-              Choose Plan
-            </button>
-          </div>
-
-          {/* Pro Plan */}
-          <div className="bg-gradient-to-t from-indigo-900/50 to-gray-900/50 backdrop-blur-sm border border-indigo-500/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-2xl font-semibold text-white">Pro</h3>
-              <span className="bg-indigo-600/20 text-indigo-400 px-3 py-1 rounded text-sm">Most Popular</span>
-            </div>
-            <p className="text-5xl font-bold text-indigo-400 mb-6">
-              $79<span className="text-lg font-normal">/mo</span>
-            </p>
-            <ul className="space-y-4 text-gray-300 mb-8">
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                3 Chatbots
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                10,000 Messages/mo
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Advanced Analytics
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Branding Removal
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Priority Support
-              </li>
-            </ul>
-            <button
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 transform hover:scale-105"
-            >
-              Choose Plan
-            </button>
-          </div>
-
-          {/* Enterprise Plan */}
-          <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <h3 className="text-2xl font-semibold text-white mb-4">Enterprise</h3>
-            <p className="text-5xl font-bold text-indigo-400 mb-6">
-              Custom<span className="text-lg font-normal">/mo</span>
-            </p>
-            <ul className="space-y-4 text-gray-300 mb-8">
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Unlimited Chatbots
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Unlimited Messages
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Dedicated Account Manager
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Custom SLA
-              </li>
-              <li className="flex items-center">
-                <svg className="w-5 h-5 text-indigo-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                On-premise Deployment
-              </li>
-            </ul>
-            <button
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-200 transform hover:scale-105"
-            >
-              Contact Sales
-            </button>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {plans.map((plan, i) => (
+            <PricingCard
+              key={i}
+              name={plan.name}
+              price={plan.price}
+              period={plan.period}
+              description={plan.description}
+              features={plan.features}
+              cta={plan.cta}
+              highlighted={plan.highlighted}
+              delay={i * 150}
+            />
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default PricingSection;
+}
