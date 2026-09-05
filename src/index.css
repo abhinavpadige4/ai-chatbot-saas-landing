@@ -2,58 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom glassmorphism styles */
-.glass-card {
-  @apply bg-white/5 backdrop-blur-xs border border-white/10 rounded-xl shadow-glass transition-all duration-300 hover:shadow-xl hover:border-white/20;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
 }
 
-.glass-card:hover {
-  @apply transform -translate-y-1;
-}
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-glass transition-all duration-300 hover:shadow-xl;
+  }
 
-/* Animated icon styles */
-.icon-animate {
-  @apply transition-all duration-500 ease-in-out hover:scale-110 hover:rotate-12;
-}
+  .gradient-border {
+    @apply relative;
+  }
 
-/* Gradient text */
-.gradient-text {
-  @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
-}
+  .gradient-border::after {
+    @apply content-[''] absolute inset-0 rounded-xl bg-[linear-gradient(135deg,#6366f1_0%,#8b5cf6_50%,#06b6d4_100%)] -z-10 p-[1px] -mask-[linear-gradient(0#0000,0#0000)_padding-box,linear-gradient(0#0000_0#0000)] mask-composite-exclude;
+  }
 
-/* Section fade-in on scroll */
-.fade-in-section {
-  @apply opacity-0 transform translate-y-10 transition-all duration-800 ease-out;
-}
+  .animate-on-hover {
+    @apply transition-transform duration-300 ease-in-out;
+  }
 
-.fade-in-section.visible {
-  @apply opacity-100 transform translate-y-0;
-}
+  .animate-on-hover:hover {
+    @apply scale-[1.05];
+  }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+  .hero-gradient {
+    @apply bg-[linear-gradient(135deg,#6366f1_0%,#8b5cf6_50%,#06b6d4_100%)];
+  }
 
-::-webkit-scrollbar-track {
-  @apply bg-gray-900;
-}
+  .section-fade-in {
+    @apply opacity-0 translate-y-10 transition-opacity transition-transform duration-1000 ease-out;
+  }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-r from-primary-600 to-secondary-600 rounded-full;
+  .section-fade-in.visible {
+    @apply opacity-100 translate-y-0;
+  }
 }
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gradient-to-r from-primary-700 to-secondary-700;
-}
-
-/* Dark mode enhancements */
-.dark {
-  @apply bg-gray-950 text-gray-50;
-}
-
-/* Ensure proper text rendering */
-* {
-  @apply antialiased;
-}
-</style>
