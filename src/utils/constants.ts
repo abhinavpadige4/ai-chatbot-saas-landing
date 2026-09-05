@@ -1,10 +1,10 @@
-export const HERO_CONTENT = {
+export const HERO_DATA = {
   headline: "AI-Powered Customer Support",
   subtitle: "Deploy a custom AI chatbot that works 24/7, speaks multiple languages, and learns from every interaction.",
   ctaText: "Start Free Trial"
 };
 
-export const FEATURES = [
+export const FEATURES_DATA = [
   {
     id: 1,
     title: "24/7 Availability",
@@ -31,7 +31,7 @@ export const FEATURES = [
   }
 ];
 
-export const PRICING_PLANS = [
+export const PRICING_DATA = [
   {
     id: 1,
     name: "Starter",
@@ -69,7 +69,7 @@ export const PRICING_PLANS = [
   }
 ];
 
-export const TESTIMONIALS = [
+export const TESTIMONIALS_DATA = [
   {
     id: 1,
     text: "The AI chatbot reduced our support tickets by 40%.",
@@ -87,66 +87,45 @@ export const TESTIMONIALS = [
   }
 ];
 
-export const FAQ_ITEMS = [
+export const FAQ_DATA = [
   {
     id: 1,
     question: "How does the AI learn from conversations?",
-    answer: "Our AI uses machine learning to analyze past interactions, identify patterns, and continuously improve response accuracy and relevance over time."
+    answer: "Our AI uses machine learning to analyze conversation patterns and improve response accuracy over time, adapting to your business's specific needs and customer communication style."
   },
   {
     id: 2,
     question: "Is my data secure and GDPR compliant?",
-    answer: "Yes, we prioritize data security with end-to-end encryption, regular audits, and full GDPR compliance to protect your customer information."
+    answer: "Yes, we prioritize data security with end-to-end encryption, regular security audits, and full GDPR compliance. All data is stored in secure, ISO-certified data centers."
   },
   {
     id: 3,
     question: "Can I customize the chatbot's appearance?",
-    answer: "Absolutely! You can customize colors, fonts, avatar, and positioning to match your brand identity seamlessly."
+    answer: "Absolutely! You can customize colors, fonts, avatar, and positioning to match your brand identity. Advanced theming options are available in Pro and Enterprise plans."
   },
   {
     id: 4,
     question: "What integrations are available?",
-    answer: "We integrate with popular platforms including WordPress, Shopify, Slack, Zendesk, and more via API or pre-built connectors."
+    answer: "We offer native integrations with popular platforms including WordPress, Shopify, Slack, Zendesk, and custom API access for seamless integration with your existing tech stack."
   },
   {
     id: 5,
     question: "Do you offer a free trial?",
-    answer: "Yes! Start with a 14-day free trial — no credit card required. Experience all Pro features risk-free."
+    answer: "Yes! All plans come with a 14-day free trial. No credit card required to get started. You can upgrade or cancel anytime during the trial period."
   }
 ];
 
-export const FOOTER_LINKS = [
-  { name: "Product", href: "#" },
-  { name: "Pricing", href: "#" },
-  { name: "Resources", href: "#" },
-  { name: "Company", href: "#" }
-];
-
-export const FOOTER_SOCIAL = [
-  { name: "Twitter", href: "#", icon: "Twitter" },
-  { name: "LinkedIn", href: "#", icon: "LinkedIn" },
-  { name: "GitHub", href: "#", icon: "GitHub" }
-];
-
-export const COPYRIGHT = "© 2026 AI Chatbot SaaS. All rights reserved.";
-
-// FILE: vercel.json
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
+export const FOOTER_DATA = {
+  links: [
+    { name: "Product", href: "#" },
+    { name: "Pricing", href: "#" },
+    { name: "Resources", href: "#" },
+    { name: "Company", href: "#" }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  social: [
+    { name: "Twitter", href: "#", icon: "Twitter" },
+    { name: "LinkedIn", href: "#", icon: "LinkedIn" },
+    { name: "GitHub", href: "#", icon: "GitHub" }
   ],
-  "env": {
-    "VITE_APP_NAME": "AI Chatbot SaaS"
-  }
-}
+  copyright: "© 2026 AI Chatbot SaaS. All rights reserved."
+};
