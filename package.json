@@ -1,7 +1,7 @@
 {
   "name": "ai-chatbot-saas-landing",
   "version": "1.0.0",
-  "description": "A modern landing page for an AI-powered customer support chatbot SaaS",
+  "description": "AI Chatbot SaaS Landing Page with dark theme, purple-blue gradients, and animated features",
   "main": "index.html",
   "scripts": {
     "dev": "vite",
