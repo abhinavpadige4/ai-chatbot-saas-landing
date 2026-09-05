@@ -2,50 +2,48 @@ export const pricingPlans = [
   {
     id: 1,
     name: "Starter",
-    price: 29,
-    billingPeriod: "mo",
-    chats: "Up to 500 chats/mo",
+    price: "$29",
+    period: "/mo",
     features: [
+      "Up to 500 chats/mo",
       "Basic analytics",
       "Email support",
-      "Standard branding",
-      "Up to 3 team members",
+      "Standard branding"
     ],
     recommended: false,
-    color: "purple",
+    bgColor: "bg-purple-900/20",
+    borderColor: "border-purple-500/30"
   },
   {
     id: 2,
     name: "Pro",
-    price: 79,
-    billingPeriod: "mo",
-    chats: "Up to 2,000 chats/mo",
+    price: "$79",
+    period: "/mo",
     features: [
+      "Up to 2,000 chats/mo",
       "Advanced analytics",
       "Priority support",
       "Custom branding",
-      "API access",
-      "Up to 10 team members",
+      "API access"
     ],
     recommended: true,
-    color: "blue",
+    bgColor: "bg-blue-900/20",
+    borderColor: "border-blue-500/30"
   },
   {
     id: 3,
     name: "Enterprise",
-    price: 0, // Custom pricing
-    billingPeriod: "",
-    chats: "Unlimited chats",
+    price: "Custom",
+    period: "",
     features: [
+      "Unlimited chats",
       "Dedicated account manager",
       "SLA guaranteed",
       "On-premise option",
-      "Custom integrations",
-      "SSO & SCIM",
-      "Unlimited team members",
+      "Custom integrations"
     ],
     recommended: false,
-    color: "gradient",
-    isCustom: true,
-  },
+    bgColor: "bg-gradient-to-r from-purple-900/20 to-blue-900/20",
+    borderColor: "border-purple-500/30 border-blue-500/30"
+  }
 ];
