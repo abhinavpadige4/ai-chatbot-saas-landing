@@ -1,60 +1,46 @@
-import { ReactNode } from "react";
+import React from 'react';
 
 interface GradientButtonProps {
-  children: ReactNode;
-  variant?: "primary" | "secondary" | "outline";
-  size?: "sm" | "md" | "lg";
+  children: React.ReactNode;
+  onClick?: () => void;
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
   className?: string;
   disabled?: boolean;
-  onClick?: () => void;
-  asChild?: boolean;
-  href?: string;
-  target?: string;
-  rel?: string;
 }
 
-export const GradientButton: React.FC<GradientButtonProps> = ({
+const GradientButton: React.FC<GradientButtonProps> = ({
   children,
-  variant = "primary",
-  size = "md",
-  className = "",
-  disabled = false,
   onClick,
-  asChild = false,
-  href,
-  target,
-  rel,
+  variant = 'primary',
+  size = 'md',
+  className = '',
+  disabled = false,
 }) => {
-  const baseClasses = "flex items-center justify-center gap-2 font-medium transition-all duration-200 ease-in-out";
+  const baseClasses = `font-medium rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none`;
 
   const variantClasses = {
-    primary: "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white",
-    secondary: "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white",
-    outline:
-      "border border-gradient-to-r from-purple-600 to-blue-600 bg-transparent text-purple-300 hover:bg-gradient-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white",
-  };
+    primary: `bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 focus:ring-purple-500 text-white`,
+    secondary: `bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 focus:ring-gray-500 text-white`,
+  }[variant] || '';
 
   const sizeClasses = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 py-3 text-base",
-    lg: "px-8 py-4 text-lg",
-  };
+    sm: `px-3 py-2 text-sm`,
+    md: `px-6 py-3 text-base`,
+    lg: `px-8 py-4 text-lg`,
+  }[size] || '';
 
-  const disabledClasses =
-    "opacity-50 cursor-not-allowed hover:from-purple-600 hover:to-blue-600";
+  const fullClassName = `${baseClasses} ${variantClasses} ${sizeClasses} ${className}`.trim();
 
-  const isDisabled = disabled || !onClick && !href;
-
-  const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${isDisabled ? disabledClasses : ""} ${className}`.trim();
-
-  const Component = asChild || href ? "a" : "button";
-
-  const props: any = {
-    className: classes,
-    disabled: isDisabled,
-    ...(href && { href, target, rel }),
-    ...(!asChild && !href && { onClick }),
-  };
-
-  return <Component {...props}>{children}</Component>;
+  return (
+    <button
+      className={fullClassName}
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  );
 };
+
+export default GradientButton;
