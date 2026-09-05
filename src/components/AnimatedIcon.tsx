@@ -1,53 +1,34 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 interface AnimatedIconProps {
   className?: string;
-  delay?: number;
   size?: number;
+  color?: string;
+  delay?: number;
 }
 
-const AnimatedIcon: React.FC<AnimatedIconProps> = ({ 
-  className = '', 
-  delay = 0, 
+const AnimatedIcon: React.FC<AnimatedIconProps> = ({
+  className = '',
   size = 24,
-  ...props 
+  color = 'currentColor',
+  delay = 0,
 }) => {
-  const iconRef = useRef<SVGSVGElement>(null);
-
-  useEffect(() => {
-    const icon = iconRef.current;
-    if (!icon) return;
-
-    const floatAnimation = () => {
-      const float = () => {
-        const offset = Math.sin(Date.now() * 0.002 + delay) * 3;
-        icon.style.transform = `translateY(${offset}px)`;
-        requestAnimationFrame(float);
-      };
-      requestAnimationFrame(float);
-    };
-
-    floatAnimation();
-    return () => {
-      // Cleanup if needed
-    };
-  }, [delay]);
-
   return (
-    <svg
-      ref={iconRef}
-      className={`h-${size} w-${size} text-purple-400/80 hover:text-purple-300 transition-colors duration-300 ${className}`}
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      {...props}
+    <span
+      className={`inline-block animate-float ${className}`}
+      style={{
+        width: size,
+        height: size,
+        color,
+        animationDelay: `${delay}s`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
     >
-      {/* This is a placeholder - actual icon content would be passed via children or props */}
-      {/* For demo purposes, we'll render a simple sparkle icon */}
-      <circle cx="12" cy="12" r="1" />
-      <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
-      <path d="M5.636 5.636l1.414 1.414M16.95 16.95l1.414 1.414M5.636 18.364l1.414-1.414M16.95 7.05l1.414-1.414" />
-    </svg>
+      {/* This component expects to wrap an SVG or icon element */}
+      {/* Usage: <AnimatedIcon><svg>...</svg></AnimatedIcon> */}
+    </span>
   );
 };
 
