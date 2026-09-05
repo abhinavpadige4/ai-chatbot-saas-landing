@@ -11,12 +11,10 @@ interface AnimatedIconProps {
 const AnimatedIcon: React.FC<AnimatedIconProps> = ({
   className = '',
   size = 24,
-  color = '#6366f1',
+  color = 'currentColor',
   animation = 'pulse',
   children,
 }) => {
-  const baseClasses = `inline-flex items-center justify-center w-${size} h-${size} text-${color} transition-all duration-300`;
-
   const animationClasses = {
     pulse: 'animate-pulse',
     float: 'animate-float',
@@ -24,7 +22,9 @@ const AnimatedIcon: React.FC<AnimatedIconProps> = ({
   }[animation] || '';
 
   return (
-    <div className={`${baseClasses} ${animationClasses} ${className}`}>
+    <div
+      className={`inline-flex items-center justify-center w-${size} h-${size} text-${color} ${animationClasses} ${className}`}
+    >
       {children}
     </div>
   );
@@ -32,78 +32,52 @@ const AnimatedIcon: React.FC<AnimatedIconProps> = ({
 
 export default AnimatedIcon;
 
-// Keyframes for animations (can be added to global CSS, but included here for self-containment via style tag if needed)
-// However, since we're using Tailwind, we assume these are defined in tailwind.config.js or globals.css
-// For true self-containment in component, we'd need to inject styles - but per instructions, we use Tailwind
-// So we rely on existing Tailwind utilities and assume animations are configured
-// If not, user should add to tailwind.config.js:
-//   animation: {
-//     pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-//     float: 'float 3s ease-in-out infinite',
-//     spin: 'spin 1s linear infinite',
-//   },
-//   keyframes: {
-//     float: {
-//       '0%, 100%': { transform: 'translateY(0)' },
-//       '50%': { transform: 'translateY(-10px)' },
-//     },
-//   }
+// FILE: src/components/GradientButton.tsx
+import React from 'react';
 
-// Since we cannot modify config from here, and the component must work with given stack,
-// we note that the animations must be set up in Tailwind config.
-// For the purpose of this task, we use the class names and assume they exist.
-// In a real project, these would be configured.
+interface GradientButtonProps {
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  fullWidth?: boolean;
+}
 
-// Alternative: Use inline styles for animation if we must be fully self-contained without config changes
-// But per instructions, we use Tailwind, so we proceed with utility classes and note the dependency.
-
-// If we were to make it fully self-contained with inline styles (not recommended for Tailwind projects):
-/*
-const AnimatedIcon: React.FC<AnimatedIconProps> = ({
-  className = '',
-  size = 24,
-  color = '#6366f1',
-  animation = 'pulse',
+const GradientButton: React.FC<GradientButtonProps> = ({
   children,
+  variant = 'primary',
+  size = 'md',
+  className = '',
+  onClick,
+  disabled = false,
+  fullWidth = false,
 }) => {
-  const animationStyles: React.CSSProperties = {};
-  let animationName = '';
-  let animationDuration = '2s';
-  let animationIterationCount = 'infinite';
-  let animationTimingFunction = 'cubic-bezier(0.4, 0, 0.6, 1)';
+  const baseClasses = 'font-medium rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
 
-  switch (animation) {
-    case 'pulse':
-      animationName = 'pulse';
-      break;
-    case 'float':
-      animationName = 'float';
-      animationDuration = '3s';
-      animationTimingFunction = 'ease-in-out';
-      break;
-    case 'spin':
-      animationName = 'spin';
-      animationDuration = '1s';
-      animationTimingFunction = 'linear';
-      break;
-    default:
-      animationName = 'pulse';
-  }
+  const variantClasses = {
+    primary: 'bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white',
+    secondary: 'bg-gradient-to-r from-purple-900/20 to-blue-900/20 hover:from-purple-900/30 hover:to-blue-900/30 text-purple-300 border border-purple-600/30',
+  }[variant];
 
-  if (animationName) {
-    animationStyles.animation = `${animationName} ${animationDuration} ${animationTimingFunction} ${animationIterationCount}`;
-  }
+  const sizeClasses = {
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-base',
+    lg: 'px-8 py-4 text-lg',
+  }[size];
 
-  // Define keyframes via style tag would be needed for float/pulse/spin - not possible in inline style
-  // So we cannot do this properly without CSS injection or pre-defined keyframes
+  const fullWidthClass = fullWidth ? 'w-full' : '';
 
-  // Therefore, we stick to Tailwind and assume config is set up
-  // For the sake of completing the task as requested, we output the Tailwind version
-  // and note that animations require Tailwind config
+  return (
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`${baseClasses} ${variantClasses} ${sizeClasses} ${fullWidthClass} ${className}`}
+    >
+      {children}
+    </button>
+  );
 };
-*/
 
-// Given the constraints, we provide the Tailwind-based version and assume animations are configured in tailwind.config.js
-// If not, the classes will fallback to no animation but won't break
-
-export { AnimatedIcon };
+export default GradientButton;
