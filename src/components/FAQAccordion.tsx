@@ -1,28 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-
-const faqItems = [
-  {
-    question: "How does the AI learn?",
-    answer: "It uses reinforcement learning from each conversation, improving over time."
-  },
-  {
-    question: "Can I integrate with my existing CRM?",
-    answer: "Yes, we offer native integrations with Salesforce, HubSpot, Zoho, and custom webhooks."
-  },
-  {
-    question: "Is my data secure?",
-    answer: "All data is encrypted AES-256 at rest and in transit, with SOC 2 Type II compliance."
-  },
-  {
-    question: "What languages are supported?",
-    answer: "The chatbot supports over 50 languages automatically, with real-time translation capabilities."
-  },
-  {
-    question: "Do you offer a free trial?",
-    answer: "Yes, we offer a 14-day free trial with no credit card required to get started."
-  }
-];
+import { faqData } from '../data/faq';
 
 const FAQAccordion: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -32,48 +9,35 @@ const FAQAccordion: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-900">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent">
+    <section className="py-16 bg-gray-900">
+      <div className="max-w-4xl mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
-          {faqItems.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.4 }}
-              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl overflow-hidden"
-            >
-              <motion.button
+          {faqData.map((item, index) => (
+            <div key={index} className="faq-item">
+              <button
                 onClick={() => toggleAccordion(index)}
-                className={`w-full flex items-center justify-between px-6 py-5 text-left text-gray-200 hover:bg-gray-700/50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400/50`}
-                initial={{ scale: 1 }}
-                whileTap={{ scale: 0.98 }}
+                className={`w-full flex justify-between items-center p-6 bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/50 text-left text-lg font-medium transition-all duration-300 hover:bg-gray-800/70 hover:border-purple-500/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500/50`}
+                aria-expanded={activeIndex === index}
               >
-                <div className="flex-1">
-                  <h3 className="font-medium">{item.question}</h3>
-                </div>
-                <motion.div
-                  className="w-8 h-8 flex items-center justify-center text-purple-400 transition-transform duration-300"
-                  style={{ transform: activeIndex === index ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                <span className="text-white">{item.question}</span>
+                <svg
+                  className={`w-5 h-5 text-gray-400 transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <span>+</span>
-                </div>
-              </motion.button>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
               {activeIndex === index && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="px-6 pb-5 text-gray-400"
-                >
-                  <p>{item.answer}</p>
-                </motion.div>
+                <div className="mt-4 p-6 bg-gray-800/30 backdrop-blur-sm rounded-xl border border-gray-700/50">
+                  <p className="text-gray-300 leading-relaxed">{item.answer}</p>
+                </div>
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
