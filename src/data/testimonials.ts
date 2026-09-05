@@ -1,34 +1,23 @@
 export const testimonials = [
   {
     id: 1,
-    quote: "Our support tickets dropped 40% after implementing the chatbot. Response times improved dramatically.",
+    quote: "Our support tickets dropped 40% after implementing the chatbot.",
     name: "Jane Doe",
-    title: "CEO at Acme Corp",
-    company: "Acme Corp",
-    avatar: "/avatars/jane-doe.jpg",
+    title: "CEO at Acme Corp.",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
   },
   {
     id: 2,
-    quote: "The multi-language feature helped us expand to new markets quickly. We now support customers in 12 languages.",
+    quote: "The multi-language feature helped us expand to new markets quickly.",
     name: "John Smith",
-    title: "CTO at Globex Inc",
-    company: "Globex Inc",
-    avatar: "/avatars/john-smith.jpg",
+    title: "CTO at Globex Inc.",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
   },
   {
     id: 3,
-    quote: "Analytics insights are invaluable for improving our customer experience. We've increased CSAT by 25%.",
+    quote: "Analytics insights are invaluable for improving our customer experience.",
     name: "Maria Garcia",
     title: "Support Lead at TechNova",
-    company: "TechNova",
-    avatar: "/avatars/maria-garcia.jpg",
-  },
-  {
-    id: 4,
-    quote: "The AI learns from every conversation and keeps getting better. Our team loves how intuitive it is to use.",
-    name: "David Chen",
-    title: "Director of Customer Success",
-    company: "Stellar Systems",
-    avatar: "/avatars/david-chen.jpg",
-  },
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+  }
 ];
