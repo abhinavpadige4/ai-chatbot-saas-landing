@@ -5,8 +5,8 @@ interface PricingCardProps {
   price: string;
   features: string[];
   isPopular?: boolean;
-  ctaText: string;
-  onCtaClick: () => void;
+  buttonText: string;
+  onButtonClick: () => void;
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({
@@ -14,8 +14,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
   price,
   features,
   isPopular = false,
-  ctaText,
-  onCtaClick
+  buttonText,
+  onButtonClick
 }) => {
   return (
     <div className="relative group">
@@ -24,7 +24,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
       
       {/* Popular badge */}
       {isPopular && (
-        <div className="absolute -top-2 right-4 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+        <div className="absolute -top-2 right-2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">
           Most Popular
         </div>
       )}
@@ -33,7 +33,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         <h3 className="text-2xl font-bold text-white mb-6">{title}</h3>
         <div className="flex items-baseline mb-8">
           <span className="text-4xl font-bold text-white">{price}</span>
-          <span className="ml-2 text-gray-400">/mo</span>
+          <span className="ml-3 text-gray-400">/mo</span>
         </div>
         <ul className="space-y-4 mb-8 text-gray-300">
           {features.map((feature, index) => (
@@ -46,10 +46,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
           ))}
         </ul>
         <button
-          onClick={onCtaClick}
-          className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+          onClick={onButtonClick}
+          className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform"
         >
-          {ctaText}
+          {buttonText}
         </button>
       </div>
     </div>
