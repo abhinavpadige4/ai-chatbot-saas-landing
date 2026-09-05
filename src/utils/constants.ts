@@ -91,27 +91,27 @@ export const FAQ_DATA = [
   {
     id: 1,
     question: "How does the AI learn from conversations?",
-    answer: "Our AI uses machine learning to analyze conversation patterns and improve response accuracy over time, adapting to your business's specific needs and customer communication style."
+    answer: "Our AI uses machine learning to analyze past interactions, identify patterns, and continuously improve response accuracy and relevance over time."
   },
   {
     id: 2,
     question: "Is my data secure and GDPR compliant?",
-    answer: "Yes, we prioritize data security with end-to-end encryption, regular security audits, and full GDPR compliance. All data is stored in secure, ISO-certified data centers."
+    answer: "Yes, we prioritize data security with end-to-end encryption, regular audits, and full GDPR compliance to protect your customer information."
   },
   {
     id: 3,
     question: "Can I customize the chatbot's appearance?",
-    answer: "Absolutely! You can customize colors, fonts, avatar, and positioning to match your brand identity. Advanced theming options are available in Pro and Enterprise plans."
+    answer: "Absolutely! You can customize colors, fonts, avatar, and positioning to match your brand identity seamlessly."
   },
   {
     id: 4,
     question: "What integrations are available?",
-    answer: "We offer native integrations with popular platforms including WordPress, Shopify, Slack, Zendesk, and custom API access for seamless integration with your existing tech stack."
+    answer: "We integrate with popular platforms including WordPress, Shopify, Slack, Zendesk, and more via API or pre-built connectors."
   },
   {
     id: 5,
     question: "Do you offer a free trial?",
-    answer: "Yes! All plans come with a 14-day free trial. No credit card required to get started. You can upgrade or cancel anytime during the trial period."
+    answer: "Yes! Start with a 14-day free trial on any plan — no credit card required to get started."
   }
 ];
 
