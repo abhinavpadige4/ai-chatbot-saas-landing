@@ -1,27 +1,40 @@
-```json
 {
   "name": "ai-chatbot-saas-landing",
-  "private": true,
   "version": "1.0.0",
-  "type": "module",
+  "description": "AI Chatbot SaaS Landing Page with dark theme, purple-blue gradients, and animated icons",
+  "main": "src/main.tsx",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
+    "lint": "eslint src --ext .tsx --ext .ts",
+    "format": "prettier --write src"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^4.0.0",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.3",
-    "typescript": "^5.0.0",
-    "vite": "^4.4.0"
-  }
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.28.0",
+    "postcss": "^8.4.20",
+    "prettier": "^2.8.0",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  },
+  "keywords": [
+    "saas",
+    "landing page",
+    "chatbot",
+    "ai",
+    "react",
+    "tailwind",
+    "vite"
+  ],
+  "author": "AI Chatbot SaaS Team",
+  "license": "MIT"
 }
